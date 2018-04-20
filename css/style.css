@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+
+    font-family: "Source Sans Pro", sans-serif;
+
+    background-color: #2a333d;
+}
+
+.primeraPantalla{
+	background-color: white;
+	position: static;
+	display: block;
+}
+
+.text{
+	font-size: 2em;
+}
+.segundaPantalla{
+	background-color: gray;
+	position: static;
+	display: block;
+
+}
