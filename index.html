@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <title>Convertir</title>
-  </head>
-  <body>
-  	<div class="primeraPantalla">
-  		<div class="Monto">
-	  		<label for="Monto">Monto:</label>
-	  		<input type="number" name="number">
-	  	</div>
-	  	<div class="Moneda">
-	    	<label for="Moneda">Tipo de moneda:</label>
-			<select name="text">
-			  <option value="ARS">$ ARS</option> 
-			  <option value="Dolar" selected>US$ Dollar</option>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
+  <title>Convertir</title>
+</head>
+
+<body>
+  <div class="card">
+    <div class="logo">
+      <img src="img/argusd.svg" alt="">
+    </div>
+  <div class="primeraPantalla">
+    <div class="t1 monto">
+      <label for="monto">Monto:</label>
+      <input id="mont" type="number" name="number">
+    </div>
+    <div class="t1 moneda">
+      <label for="moneda">Tipo de moneda:</label>
+      <select id="moneda" name="text">
+			  <option value="peso">ARS</option>
+			  <option value="dolar" selected>USD</option>
 			</select>
-		</div>
-	</div>
-	<div class="segundaPantalla">
-		<div class="arsToDolar">
-			<h2 id="ArsArriba">$ ARS</h2>
-		</div>
-		<div class="DolarToArs">
-			<h2 id="ArsArriba">US$ Dolar</h2>
-		</div>
-  </body>
-      <script src="js/script.js"></script>
+    </div>
+  </div>
+
+  <div class="segundaPantalla">
+    <div class="arsToDolar">
+      <h2 id="pesoResult">ARG:</h2>
+    </div>
+    <div class="DolarToArs">
+      <h2 id="dolarResult">USD:</h2>
+    </div>
+    <button onclick="calculo()">Calcular</button>
+  </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
 </html>

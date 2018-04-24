@@ -1,0 +1,84 @@
+$cssCore: false;
+$cssHelpers: false;
+$devMode: false;
+$gutter: 0 !default;
+$max-width: 1140px !default;
+@import 'ed-grid';
+@mixin paddingMauro {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.grid-container {
+  @include grid('.grid-item', 1 2 3 4, 1.5em)
+}
+$oscuro: #4D4952;
+$claro: #fff;
+$violeta: #794EFD;
+$font1: roboto;
+
+h1,h2,h3,h4,h5,p{
+  font-family: $font1;
+  margin: 0;
+}
+
+body{
+  position: relative;
+  @include flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $oscuro;
+  min-height: 100vh;
+}
+
+.card{
+  @include flex;
+  min-width: 400px;
+  min-height: 400px;
+  width: 40vw;
+  background-color: $claro;
+  border-radius: 0.5em;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 2em;
+  box-shadow: 0px 20px 52px 0px rgba(0,0,0,0.2);
+  .logo{
+    width: 8em;
+    height: 8em;
+    @include flex;
+    background-color: $violeta;
+    border-radius: 6em;
+    padding: 1em;
+  }
+  .t1{
+    width: 100%;
+    padding: 0.4em;
+    font-size: 1.4em;
+    input, select{
+      font-size: 1em;
+      padding: 0.4em;
+    }
+  }
+  .primeraPantalla{
+    padding: 2em 0;
+  }
+  .segundaPantalla{
+    @include flex;
+    padding: 2em;
+    color: $claro;
+    flex-direction: column;
+    align-self: flex-end;
+    width: 100%;
+    background-color: $violeta;
+    button{
+      color: $violeta;
+      background-color: $claro;
+      border-radius: 0.2em;
+      margin-top: 1em;
+      font-size: 1em;
+      padding: 0.8em;
+      box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2)
+    }
+  }
+}

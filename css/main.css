@@ -1,0 +1,208 @@
+@charset "UTF-8";
+/**
+  EDgrid es una librería CSS para construir layouts con Responsive Web Design
+  Importe este archivo en su proyecto para empezar a usarlo
+**/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.ed-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.ed-item {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.ed-item {
+  width: 100%;
+}
+
+.ed-item.ed-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*
+| Mixin para crear cuadriculas
+|
+| $gridItemSelector: nombre del selector CSS de cada item de la cuadricula
+| $listColumns:
+|              * lista de numeros de columnas en cada breakpoint (separados por espacios). Ej: 1 2 3 4
+|              * el numero de columnas del ultimo breakpoint se hereda a breakpoints superiores
+| $gutter: separación entre cada item de la cuadricula (opcional)
+|
+*/
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.75em;
+  margin-right: -0.75em;
+}
+
+.grid-container img {
+  display: block;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.grid-container > .grid-item {
+  width: calc(100% - 1.5em);
+  margin: 0.75em;
+}
+
+@media screen and (min-width: 640px) {
+  .grid-container > .grid-item {
+    width: calc(50% - 1.5em);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid-container > .grid-item {
+    width: calc(33.33333% - 1.5em);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .grid-container > .grid-item {
+    width: calc(25% - 1.5em);
+  }
+}
+
+@supports (grid-template-areas: "header") {
+  .grid-container {
+    display: grid;
+    grid-gap: 1.5em;
+    margin-left: 0;
+    margin-right: 0;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  body {
+    overflow-x: visible;
+  }
+  @media screen and (min-width: 640px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    .grid-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .grid-container > .grid-item {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+h1, h2, h3, h4, h5, p {
+  font-family: roboto;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #4D4952;
+  min-height: 100vh;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 400px;
+  min-height: 400px;
+  width: 40vw;
+  background-color: #fff;
+  border-radius: 0.5em;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 2em;
+  box-shadow: 0px 20px 52px 0px rgba(0, 0, 0, 0.2);
+}
+
+.card .logo {
+  width: 8em;
+  height: 8em;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #794EFD;
+  border-radius: 6em;
+  padding: 1em;
+}
+
+.card .t1 {
+  width: 100%;
+  padding: 0.4em;
+  font-size: 1.4em;
+}
+
+.card .t1 input, .card .t1 select {
+  font-size: 1em;
+  padding: 0.4em;
+}
+
+.card .primeraPantalla {
+  padding: 2em 0;
+}
+
+.card .segundaPantalla {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em;
+  color: #fff;
+  flex-direction: column;
+  align-self: flex-end;
+  width: 100%;
+  background-color: #794EFD;
+}
+
+.card .segundaPantalla button {
+  color: #794EFD;
+  background-color: #fff;
+  border-radius: 0.2em;
+  margin-top: 1em;
+  font-size: 1em;
+  padding: 0.8em;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+}
